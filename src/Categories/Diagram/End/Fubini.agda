@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --lossy-unification --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --lossy-unification --safe #-}
 
 module Categories.Diagram.End.Fubini where
 

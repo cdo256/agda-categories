@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 module Categories.Category.Instance.PartialFunctions where
 
 -- Category of (Agda) Sets, and partial functions (modelled using Maybe).

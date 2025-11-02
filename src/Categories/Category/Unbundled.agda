@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 module Categories.Category.Unbundled where
 
 -- This is basically identical to Category, except that the

@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 
 -- Constructions of a Cocone from the Twisted Arrow function from a Cowedge
 -- and vice-versa, by Duality.

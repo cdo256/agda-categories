@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 module Categories.Category.Instance.FamilyOfSetoids where
 
 -- The Category of "Families of Setoids"

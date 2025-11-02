@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 
 -- The 'original' version of Lawvere Theory, based on
 -- Nat^op and IOO functors. Contrast with the weak version at

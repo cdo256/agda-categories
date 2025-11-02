@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 
 -- Bundled version of a Cartesian Closed Category
 module Categories.Category.CartesianClosed.Bundle where

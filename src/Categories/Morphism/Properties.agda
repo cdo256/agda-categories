@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 open import Categories.Category
 
 module Categories.Morphism.Properties {o ℓ e} (𝒞 : Category o ℓ e) where

@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 
 -- Bifunctor, aka a Functor from C × D to E
 module Categories.Functor.Bifunctor where

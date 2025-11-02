@@ -1,4 +1,4 @@
-{-# OPTIONS --safe --without-K #-}
+{-# OPTIONS --cubical-compatible --safe --without-K #-}
 
 -- The category of group objects with a cartesian category
 

@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 module Categories.NaturalTransformation.Extranatural where
 
 -- Although there is a notion of Extranatural in Categories.NaturalTransformation.Dinatural,

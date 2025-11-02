@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 
 -- The One Category is also a -2-Category
 module Categories.Minus2-Category.Instance.One where

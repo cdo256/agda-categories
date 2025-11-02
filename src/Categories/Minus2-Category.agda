@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 
 -- 'Traditionally', meaning in nLab and in
 -- "Lectures on n-Categories and Cohomology" by Baez and Shulman

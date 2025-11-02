@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 module Categories.Category.Instance.Posets where
 
 -- The category of partially ordered sets and order-preserving maps.

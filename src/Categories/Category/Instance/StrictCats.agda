@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 module Categories.Category.Instance.StrictCats where
 
 -- The (large) 'strict' category of (small) categories.

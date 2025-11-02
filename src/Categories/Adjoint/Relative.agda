@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 module Categories.Adjoint.Relative where
 
 -- Relative Adjoints, in their biased, level-restricted version

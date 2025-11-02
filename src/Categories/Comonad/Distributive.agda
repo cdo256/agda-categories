@@ -1,4 +1,4 @@
-{-# OPTIONS --safe --without-K #-}
+{-# OPTIONS --cubical-compatible --safe --without-K #-}
 
 open import Categories.Category.Core using (Category)
 open import Categories.Functor using (Endofunctor; Functor)

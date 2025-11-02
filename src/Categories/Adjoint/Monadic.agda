@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 
 -- Monadic Adjunctions
 -- https://ncatlab.org/nlab/show/monadic+adjunction

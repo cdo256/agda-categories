@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 module Categories.Category.Instance.Sets where
 
 -- Category of (Agda) Sets, aka (types, functions, pointwise equality with implicit value)

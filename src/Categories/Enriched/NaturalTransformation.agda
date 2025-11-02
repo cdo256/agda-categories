@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 
 open import Categories.Category using (module Commutation) renaming (Category to Setoid-Category)
 open import Categories.Category.Monoidal using (Monoidal)

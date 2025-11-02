@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 module Categories.Category.Construction.LT-Models where
 
 -- Given a fixed Lawvere Theory LT and a fixed category C,

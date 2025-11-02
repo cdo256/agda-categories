@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 
 open import Categories.Category using (Category; module Commutation)
 open import Categories.Category.Monoidal

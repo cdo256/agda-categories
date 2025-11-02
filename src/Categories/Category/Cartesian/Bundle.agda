@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 
 -- Bundled version of a Cartesian Category
 module Categories.Category.Cartesian.Bundle where

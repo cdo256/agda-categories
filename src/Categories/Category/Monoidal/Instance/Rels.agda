@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 module Categories.Category.Monoidal.Instance.Rels where
 
 -- The category of relations is cartesian and (by self-duality) co-cartesian.

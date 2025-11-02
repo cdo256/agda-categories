@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 module Categories.Functor.Representable where
 
 -- A Presheaf (into Setoids) is representation if it is naturally isomorphic to a Hom functor

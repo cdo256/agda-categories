@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 
 open import Data.Product using (Σ; _,_)
 open import Function using (_$_)

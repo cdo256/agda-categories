@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 module Categories.Category.Dagger.Construction.Discrete where
 
 open import Relation.Binary.PropositionalEquality

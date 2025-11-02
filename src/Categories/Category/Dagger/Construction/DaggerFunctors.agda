@@ -1,4 +1,4 @@
-{-# OPTIONS --safe --without-K #-}
+{-# OPTIONS --cubical-compatible --safe --without-K #-}
 
 module Categories.Category.Dagger.Construction.DaggerFunctors where
 

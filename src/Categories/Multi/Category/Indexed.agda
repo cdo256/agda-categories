@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 
 -- Multicategories but over an 'index' type, rather than forcing Fin n
 module Categories.Multi.Category.Indexed where

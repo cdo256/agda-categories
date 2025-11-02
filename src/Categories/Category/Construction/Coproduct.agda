@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 module Categories.Category.Construction.Coproduct where
 
 -- Coproduct of categories.  Need to pull out some of the combinators.

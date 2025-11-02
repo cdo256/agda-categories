@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 open import Categories.Category.Groupoid
 
 module Categories.Category.Groupoid.Properties {o ℓ e} (G : Groupoid o ℓ e) where

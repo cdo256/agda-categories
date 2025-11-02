@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 
 -- Verbatim dual of Categories.Category.Construction.Kleisli
 module Categories.Category.Construction.CoKleisli where

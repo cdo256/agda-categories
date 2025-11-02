@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 module Categories.Category.Product.Properties where
 
 -- properties of the product _※_ of Functors (so probably should be renamed?)

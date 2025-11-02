@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 
 -- A Category enriched over Setoids is... a Category!
 module Categories.Enriched.Over.Setoids where

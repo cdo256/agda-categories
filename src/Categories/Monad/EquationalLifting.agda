@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 
 -- Equational Lifting Monads, as introduced in "An Equational Notion of Lifting Monad" by Bucalo et al.
 

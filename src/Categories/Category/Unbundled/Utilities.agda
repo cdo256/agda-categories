@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 module Categories.Category.Unbundled.Utilities where
 
 -- various functions that are 'normally' in the Category record, but

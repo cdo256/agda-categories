@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 
 -- Mentioned in passing here:
 -- https://ncatlab.org/nlab/show/slice+2-category

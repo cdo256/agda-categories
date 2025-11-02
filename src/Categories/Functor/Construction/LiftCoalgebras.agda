@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 open import Categories.Category
 open import Categories.Functor using (Functor; Endofunctor)
 open import Categories.Functor.DistributiveLaw using (DistributiveLaw)

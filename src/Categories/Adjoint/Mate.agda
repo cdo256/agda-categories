@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 
 -- the usual notion of mate is defined by two isomorphisms between hom set(oid)s are natural,
 -- but due to explicit universe level, a different definition is used.

@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 
 -- Bundled version of Monoidal Category
 module Categories.Category.Monoidal.Bundle where

@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 module Categories.Category.Construction.Presheaves where
 
 -- The Category of Presheaves over a Category C, i.e.

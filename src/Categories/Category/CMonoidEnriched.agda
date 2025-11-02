@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 module Categories.Category.CMonoidEnriched where
 
 -- A category where the Homs are not sets, but commutative monoids

@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 -- verbatim dual of Categories.Category.Construction.Properties.EilenbergMoore
 module Categories.Category.Construction.Properties.CoEilenbergMoore where
 

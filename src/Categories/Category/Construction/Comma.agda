@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 module Categories.Category.Construction.Comma where
 
 open import Data.Product using (_×_; ∃; _,_; proj₁; proj₂; zip; map)

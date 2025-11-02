@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 
 -- Formalization of internal relations
 -- (=congruences: https://ncatlab.org/nlab/show/congruence)

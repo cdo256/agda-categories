@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 open import Categories.Category
 
 -- Mainly *properties* of isomorphisms, and a lot of other things too

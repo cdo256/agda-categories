@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 
 -- A Monad in a Bicategory.
 -- For the more elementary version of Monads, see 'Categories.Monad'.

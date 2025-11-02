@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 open import Categories.Category hiding (_[_,_])
 
 module Categories.Object.Coproduct {o ℓ e} (𝒞 : Category o ℓ e) where

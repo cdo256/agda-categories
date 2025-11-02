@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 
 -- Properties of the natural transformation
 -- Ψ = τ * ∘ σ = σ * ∘ τ : M A ⊗ M B ⇒ M (A ⊗ B)

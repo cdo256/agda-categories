@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 
 
 -- Identity-on-Objects Functor for (Object-)Unbundled Categories

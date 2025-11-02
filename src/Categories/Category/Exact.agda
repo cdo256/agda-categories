@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 
 -- Exact category (https://ncatlab.org/nlab/show/exact+category)
 -- is a regular category

@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 module Categories.Kan where
 
 -- Left and Right Kan extensions (known as Lan and Ran)

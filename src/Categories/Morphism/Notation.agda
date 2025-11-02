@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 
 {-
   Useful notation for Epimorphisms, Mononmorphisms, and isomorphisms

@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 open import Categories.Bicategory using (Bicategory)
 
 module Categories.Bicategory.Object.Product {o ℓ e t} (𝒞 : Bicategory o ℓ e t) where

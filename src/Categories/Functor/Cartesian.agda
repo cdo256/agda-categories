@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 
 -- A cartesian functor preserves products (of cartesian categories)
 module Categories.Functor.Cartesian where

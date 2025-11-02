@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 module Categories.Category.Species where
 
 -- The Category of Species, as the Functor category from Core (FinSetoids) to Setoids.

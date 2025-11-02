@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 -- Actually, we're cheating (for expediency); this is
 -- Symmetric Rig, not just Rig.
 open import Categories.Category

@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 
 -- Given a predicate on the objects of a Category C, build another category
 -- with just those that satisfy a pr

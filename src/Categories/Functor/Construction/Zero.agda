@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 module Categories.Functor.Construction.Zero where
 
 -- The Zero functor maps everything to the initial object of a

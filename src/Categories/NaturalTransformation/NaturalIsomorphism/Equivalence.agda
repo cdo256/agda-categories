@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 module Categories.NaturalTransformation.NaturalIsomorphism.Equivalence where
 
 -- a certain notion of equivalence between Natural Isomorphisms.

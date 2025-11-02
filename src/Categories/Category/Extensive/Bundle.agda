@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 
 -- Bundled version of an extensive (distributive) Category
 module Categories.Category.Extensive.Bundle where

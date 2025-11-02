@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 open import Categories.Category using (Category; module Definitions)
 
 -- Definition of the Arrow Category of a Category C

@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 module Categories.Category.Construction.StrictDiscrete where
 
 -- This is not 'the' Discrete Category construction, but one of them.

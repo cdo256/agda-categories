@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 module Categories.Category.Instance.Setoids where
 
 -- Category of Setoids, aka (Setoid, _⟶_, Setoid ≈)

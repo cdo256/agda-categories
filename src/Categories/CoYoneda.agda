@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 module Categories.CoYoneda where
 
 -- CoYoneda Lemma.  See Yoneda for more documentation

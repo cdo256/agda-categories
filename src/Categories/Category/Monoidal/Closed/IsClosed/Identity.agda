@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 
 -- There are really all 'private' sub-pieces of
 -- Categories.Category.Monoidal.Closed.IsClosed, but that is taking

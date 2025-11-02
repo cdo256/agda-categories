@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 -- The Underlying category of an Enriched category over a Monoidal category V
 open import Categories.Category.Monoidal using (Monoidal)
 open import Categories.Category.Core renaming (Category to Setoid-Category)

@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 module Categories.NaturalTransformation where
 
 -- all the important stuff about NaturalTransformation are defined in .Core

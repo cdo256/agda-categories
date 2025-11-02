@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 
 -- Defines Restriction Category
 --   https://ncatlab.org/nlab/show/restriction+category

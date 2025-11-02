@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 
 -- Define Strong Monad; use the Wikipedia definition
 -- https://en.wikipedia.org/wiki/Strong_monad

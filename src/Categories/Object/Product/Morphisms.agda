@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 -- Various operations and proofs on morphisms between products
 
 -- Perhaps a bit of overkill? There is so much here that it's impossible to remember

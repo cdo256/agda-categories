@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe --lossy-unification #-}
+{-# OPTIONS --cubical-compatible --without-K --safe --lossy-unification #-}
 
 module Categories.Diagram.End.Properties where
 

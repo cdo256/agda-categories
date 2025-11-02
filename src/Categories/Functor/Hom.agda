@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 module Categories.Functor.Hom where
 
 -- The Hom Functor from C.op × C to Setoids,

@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 
 -- An inhabited Indiscrete category is a -2-Category
 module Categories.Minus2-Category.Construction.Indiscrete where

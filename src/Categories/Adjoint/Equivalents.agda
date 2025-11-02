@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 module Categories.Adjoint.Equivalents where
 
 -- Theorems about equivalent formulations to Adjoint

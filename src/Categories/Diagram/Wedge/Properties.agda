@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 
 -- This is more a pair of constructions that a property...
 -- but show that one can build a Cone for the Twisted Arrow functor from a Wedge

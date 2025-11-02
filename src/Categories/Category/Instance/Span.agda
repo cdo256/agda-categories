@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 
 -- https://ncatlab.org/nlab/show/span
 -- The colimit of a functor from this category is a pushout in the target category.

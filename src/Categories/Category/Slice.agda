@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 open import Categories.Category.Core
 
 -- slice category (https://ncatlab.org/nlab/show/over+category)

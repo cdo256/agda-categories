@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 module Categories.Category.Restriction.Instance.PartialFunctions where
 
 -- The Category of partial functions is a restriction category

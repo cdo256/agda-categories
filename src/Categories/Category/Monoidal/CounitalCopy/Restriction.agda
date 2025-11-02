@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 
 open import Categories.Category.Core using (Category)
 open import Categories.Category.Monoidal using (Monoidal)

@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 
 -- The Category of Algebraic Kan Complexes
 module Categories.Category.Instance.KanComplexes where

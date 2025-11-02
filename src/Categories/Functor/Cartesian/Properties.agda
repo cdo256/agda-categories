@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 
 -- Some of the obvious properties of cartesian functors
 module Categories.Functor.Cartesian.Properties where

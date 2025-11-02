@@ -1,4 +1,4 @@
-{-# OPTIONS --without-K --safe #-}
+{-# OPTIONS --cubical-compatible --without-K --safe #-}
 module Categories.Category.Instance.FinSetoids where
 
 -- Category of Finite Setoids, as a sub-category of Setoids
