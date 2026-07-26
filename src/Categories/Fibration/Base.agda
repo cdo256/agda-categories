@@ -52,7 +52,3 @@ record Fibration : Set (levelOfTerm p) where
     cartesian : ∀ {I Y} (u : I 𝐁.⇒ p₀ Y) → Cartesian p (f u)
 
   module cartesian {I Y} (u : I 𝐁.⇒ p₀ Y) = Cartesian (cartesian u)
-
-  open import Categories.Morphism using (IsIso)
-  open import Categories.Bicategory
-  open import Function.Structures
