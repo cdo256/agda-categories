@@ -1,81 +1,85 @@
 {-# OPTIONS --without-K --safe #-}
 
 open import Categories.Category
-open import Categories.Functor
+import Categories.Diagram.Pullback as PB
 open import Categories.Fibration.Base
+open import Categories.Functor
 open import Categories.Morphism.Cartesian using (Cartesian)
-open import Data.Product using (Σ; _,_; proj₁)
-open import Level
+open import Data.Product using (_,_; proj₂)
 
-module Categories.Fibration.CodomainFibration where
+module Categories.Fibration.CodomainFibration {o ℓ e}
+  (C : Category o ℓ e)
+  (pullbacks : ∀ {A B X} → (f : C [ A , X ]) → (g : C [ B , X ])
+             → PB.Pullback C f g)
+  where
 
-open import Categories.Category.Instance.Sets
-open import Categories.Category.Construction.Arrow
-open import Relation.Binary.PropositionalEquality as ≡ using (_≡_; _≗_)
+open import Categories.Category.Construction.Arrow C
+open import Categories.Diagram.Pullback C using (Pullback)
+open import Categories.Morphism C using (module ≅)
 
-Sets⃗ : ∀ ℓ → Category (suc ℓ) ℓ ℓ
-Sets⃗ ℓ = Arrow (Sets ℓ)
+private
+  module C = Category C
 
-cod₀ : ∀ {ℓ} → Morphism (Sets ℓ) → Set ℓ
-cod₀ = Morphism.cod
-cod₁ : ∀ {ℓ} {A B} → Sets⃗ ℓ [ A , B ] → Sets ℓ [ cod₀ A , cod₀ B ]
-cod₁ f = Morphism⇒.cod⇒ f
+open C.HomReasoning
 
-cod : ∀ ℓ → Functor (Sets⃗ ℓ) (Sets ℓ)
-cod ℓ = record
-  { F₀ = cod₀
-  ; F₁ = cod₁
-  ; identity = λ _ → ≡.refl
-  ; homomorphism = λ _ → ≡.refl
-  ; F-resp-≈ = λ (_ , r) → r
+Codomain : Functor Arrow C
+Codomain = record
+  { F₀ = Morphism.cod
+  ; F₁ = Morphism⇒.cod⇒
+  ; identity = C.Equiv.refl
+  ; homomorphism = C.Equiv.refl
+  ; F-resp-≈ = proj₂
   }
 
-CodFibration : ∀ ℓ → Fibration (cod ℓ)
-CodFibration ℓ = record
+CodFibration : Fibration Codomain
+CodFibration = record
   { X = X
   ; f = f
   ; φ = λ _ → ≅.refl
-  ; u∘φ⁻≈pf = λ _ _ → ≡.refl
+  ; u∘φ⁻≈pf = λ _ → C.identityʳ
   ; cartesian = cartesian
   }
   where
 
-  open import Categories.Morphism (Sets ℓ) using (module ≅)
+  pb : ∀ {I} {Y : Morphism} (u : C [ I , Morphism.cod Y ]) → Pullback u (Morphism.arr Y)
+  pb {Y = Y} u = pullbacks u (Morphism.arr Y)
 
-  PullbackDom : ∀ {I : Set ℓ} (Y : Morphism (Sets ℓ)) (u : I → cod₀ Y) → Set ℓ
-  PullbackDom {I} Y u = Σ I λ i → Σ (Morphism.dom Y) λ y → u i ≡ Morphism.arr Y y
-
-  X : ∀ {I : Set ℓ} {Y : Morphism (Sets ℓ)} (u : I → cod₀ Y)
-    → Morphism (Sets ℓ)
+  X : ∀ {I} {Y : Morphism} (u : C [ I , Morphism.cod Y ]) → Morphism
   X {I} {Y} u = record
-    { dom = PullbackDom Y u
+    { dom = Pullback.P (pb {Y = Y} u)
     ; cod = I
-    ; arr = proj₁
+    ; arr = Pullback.p₁ (pb {Y = Y} u)
     }
 
-  f : ∀ {I : Set ℓ} {Y : Morphism (Sets ℓ)} (u : I → cod₀ Y) → Sets⃗ ℓ [ X u , Y ]
+  f : ∀ {I} {Y : Morphism} (u : C [ I , Morphism.cod Y ]) → Arrow [ X u , Y ]
   f {Y = Y} u = record
-    { dom⇒ = λ where (_ , (y , _)) → y
+    { dom⇒ = Pullback.p₂ (pb {Y = Y} u)
     ; cod⇒ = u
-    ; square = λ where (_ , (_ , eq)) → eq
+    ; square = Pullback.commute (pb {Y = Y} u)
     }
 
-  cartesian : ∀ {I : Set ℓ} {Y : Morphism (Sets ℓ)} (u : I → cod₀ Y)
-    → Cartesian (cod ℓ) (f {Y = Y} u)
+  cartesian : ∀ {I} {Y : Morphism} (u : C [ I , Morphism.cod Y ]) → Cartesian Codomain (f {Y = Y} u)
   cartesian {Y = Y} u = record
     { universal = λ {A} {v} h eq → record
-      { dom⇒ = λ a →
-          ( v (Morphism.arr A a)
-          , ( Morphism⇒.dom⇒ h a
-            , ≡.trans (eq (Morphism.arr A a)) (Morphism⇒.square h a)
-            )
-          )
+      { dom⇒ = Pullback.universal (pb {Y = Y} u) (universal-square h eq)
       ; cod⇒ = v
-      ; square = λ _ → ≡.refl
+      ; square = C.Equiv.sym
+          (Pullback.p₁∘universal≈h₁ (pb {Y = Y} u)
+            {h₁ = v C.∘ Morphism.arr A}
+            {h₂ = Morphism⇒.dom⇒ h}
+            {eq = universal-square h eq})
       }
     ; commute = λ {A} {v} {h} eq →
-        ( (λ _ → ≡.refl)
-        , eq
-        )
-    ; compat = λ _ _ → ≡.refl
+      ( Pullback.p₂∘universal≈h₂ (pb {Y = Y} u) {eq = universal-square h eq}
+      , eq
+      )
+    ; compat = λ _ → C.Equiv.refl
     }
+    where
+    universal-square : ∀ {A} {v : C [ Morphism.cod A , Morphism.cod (X {Y = Y} u) ]}
+      (h : Arrow [ A , Y ])
+      (eq : C [ C [ Morphism⇒.cod⇒ (f {Y = Y} u) ∘ v ] ≈ Morphism⇒.cod⇒ h ])
+      → C [ C [ u ∘ C [ v ∘ Morphism.arr A ] ] ≈ C [ Morphism.arr Y ∘ Morphism⇒.dom⇒ h ] ]
+    universal-square {A} {v} h eq =
+      C.Equiv.trans C.sym-assoc
+        (C.Equiv.trans (C.∘-resp-≈ˡ eq) (Morphism⇒.square h))
