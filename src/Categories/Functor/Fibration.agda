@@ -30,3 +30,4 @@ record Fibration : Set (levelOfTerm F) where
     cartesian : ∀ {A B} (f : A D.⇒ F₀ B) → Cartesian F (universal₁ f)
 
   module cartesian {A B} (f : A D.⇒ F₀ B) = Cartesian (cartesian f)
+
