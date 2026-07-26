@@ -76,8 +76,8 @@ infixr 9 _∘_
 _∘_ : ∀ {ℓI ℓI'} {A : Family ℓI ℓI'} {B : Family ℓI ℓI'} {D : Family ℓI ℓI'}
   → Hom B D → Hom A B → Hom A D
 _∘_ {A = A} {B = B} {D = D} g f = record
-  { u = Comp.function (u f) (u g)
-  ; f = λ i → Hom.f g (u f ⟨$⟩ i) C.∘ Hom.f f i
+  { u = gf
+  ; f = λ i → g.f (f.u ⟨$⟩ i) C.∘ f.f i
   ; coh = comp-coh
   }
   where
@@ -87,17 +87,22 @@ _∘_ {A = A} {B = B} {D = D} g f = record
   module f = Hom f
   module g = Hom g
 
+  gf : Func A.I D.I
+  gf = Comp.function f.u g.u
+
+  module gf = Func gf
+
   comp-coh : {i j : A.I₀} → (p : i A.≈ j)
-    → D.resp.from (Func.cong (Comp.function f.u g.u) p) C.∘ (g.f (f.u ⟨$⟩ i) C.∘ f.f i)
+    → D.resp.from (gf.cong p) C.∘ (g.f (f.u ⟨$⟩ i) C.∘ f.f i)
     C.≈ (g.f (f.u ⟨$⟩ j) C.∘ f.f j) C.∘ A.resp.from p
   comp-coh {i} {j} p = begin
-    D.resp.from (Func.cong (Comp.function f.u g.u) p) C.∘ (g.f (f.u ⟨$⟩ i) C.∘ f.f i)
+    D.resp.from (gf.cong p) C.∘ (g.f (f.u ⟨$⟩ i) C.∘ f.f i)
       ≈⟨ C.sym-assoc ⟩
-    (D.resp.from (Func.cong g.u (Func.cong f.u p)) C.∘ g.f (f.u ⟨$⟩ i)) C.∘ f.f i
-      ≈⟨ g.coh (Func.cong f.u p) ⟩∘⟨refl ⟩
-    (g.f (f.u ⟨$⟩ j) C.∘ B.resp.from (Func.cong f.u p)) C.∘ f.f i
+    (D.resp.from (g.u.cong (f.u.cong p)) C.∘ g.f (f.u ⟨$⟩ i)) C.∘ f.f i
+      ≈⟨ g.coh (f.u.cong p) ⟩∘⟨refl ⟩
+    (g.f (f.u ⟨$⟩ j) C.∘ B.resp.from (f.u.cong p)) C.∘ f.f i
       ≈⟨ C.assoc ⟩
-    g.f (f.u ⟨$⟩ j) C.∘ (B.resp.from (Func.cong f.u p) C.∘ f.f i)
+    g.f (f.u ⟨$⟩ j) C.∘ (B.resp.from (f.u.cong p) C.∘ f.f i)
       ≈⟨ refl⟩∘⟨ f.coh p ⟩
     g.f (f.u ⟨$⟩ j) C.∘ (f.f j C.∘ A.resp.from p)
       ≈⟨ C.sym-assoc ⟩
@@ -165,31 +170,35 @@ _∘_ {A = A} {B = B} {D = D} g f = record
   {f h : Hom B D} {g i : Hom A B}
   → f ≈ h → g ≈ i → (f ∘ g) ≈ (h ∘ i)
 ∘-resp-≈ {A = A} {B = B} {D = D} {f} {h} {g} {i} α β = record
-  { u≈ = D.trans (Func.cong (Hom.u f) β.u≈) α.u≈
+  { u≈ = D.trans (f.u.cong β.u≈) α.u≈
   ; f≈ = λ {x} → begin
-      D.resp.from (D.trans (Func.cong (Hom.u f) β.u≈) α.u≈) C.∘ ((Hom.f f (Hom.u g ⟨$⟩ x)) C.∘ Hom.f g x)
-        ≈⟨ C.∘-resp-≈ˡ (D.resp-trans (Func.cong (Hom.u f) β.u≈) α.u≈) ⟩
-      (D.resp.from α.u≈ C.∘ D.resp.from (Func.cong (Hom.u f) β.u≈)) C.∘ (Hom.f f (Hom.u g ⟨$⟩ x) C.∘ Hom.f g x)
+      D.resp.from (D.trans (f.u.cong β.u≈) α.u≈) C.∘ (f.f (g.u ⟨$⟩ x) C.∘ g.f x)
+        ≈⟨ C.∘-resp-≈ˡ (D.resp-trans (f.u.cong β.u≈) α.u≈) ⟩
+      (D.resp.from α.u≈ C.∘ D.resp.from (f.u.cong β.u≈)) C.∘ (f.f (g.u ⟨$⟩ x) C.∘ g.f x)
         ≈⟨ C.assoc ⟩
-      D.resp.from α.u≈ C.∘ (D.resp.from (Func.cong (Hom.u f) β.u≈) C.∘ (Hom.f f (Hom.u g ⟨$⟩ x) C.∘ Hom.f g x))
+      D.resp.from α.u≈ C.∘ (D.resp.from (f.u.cong β.u≈) C.∘ (f.f (g.u ⟨$⟩ x) C.∘ g.f x))
         ≈⟨ refl⟩∘⟨ C.sym-assoc ⟩
-      D.resp.from α.u≈ C.∘ ((D.resp.from (Func.cong (Hom.u f) β.u≈) C.∘ Hom.f f (Hom.u g ⟨$⟩ x)) C.∘ Hom.f g x)
+      D.resp.from α.u≈ C.∘ ((D.resp.from (f.u.cong β.u≈) C.∘ f.f (g.u ⟨$⟩ x)) C.∘ g.f x)
         ≈⟨ C.sym-assoc ⟩
-      (D.resp.from α.u≈ C.∘ (D.resp.from (Func.cong (Hom.u f) β.u≈) C.∘ Hom.f f (Hom.u g ⟨$⟩ x))) C.∘ Hom.f g x
-        ≈⟨ (refl⟩∘⟨ Hom.coh f β.u≈) ⟩∘⟨refl ⟩
-      (D.resp.from α.u≈ C.∘ (Hom.f f (Hom.u i ⟨$⟩ x) C.∘ B.resp.from β.u≈)) C.∘ Hom.f g x
+      (D.resp.from α.u≈ C.∘ (D.resp.from (f.u.cong β.u≈) C.∘ f.f (g.u ⟨$⟩ x))) C.∘ g.f x
+        ≈⟨ (refl⟩∘⟨ f.coh β.u≈) ⟩∘⟨refl ⟩
+      (D.resp.from α.u≈ C.∘ (f.f (i.u ⟨$⟩ x) C.∘ B.resp.from β.u≈)) C.∘ g.f x
         ≈⟨ C.sym-assoc ⟩∘⟨refl ⟩
-      ((D.resp.from α.u≈ C.∘ Hom.f f (Hom.u i ⟨$⟩ x)) C.∘ B.resp.from β.u≈) C.∘ Hom.f g x
+      ((D.resp.from α.u≈ C.∘ f.f (i.u ⟨$⟩ x)) C.∘ B.resp.from β.u≈) C.∘ g.f x
         ≈⟨ C.assoc ⟩
-      (D.resp.from α.u≈ C.∘ Hom.f f (Hom.u i ⟨$⟩ x)) C.∘ (B.resp.from β.u≈ C.∘ Hom.f g x)
+      (D.resp.from α.u≈ C.∘ f.f (i.u ⟨$⟩ x)) C.∘ (B.resp.from β.u≈ C.∘ g.f x)
         ≈⟨ α.f≈ ⟩∘⟨ β.f≈ ⟩
-      Hom.f h (Hom.u i ⟨$⟩ x) C.∘ Hom.f i x
+      h.f (i.u ⟨$⟩ x) C.∘ i.f x
         ∎
   }
   where
   module A = Family A
   module B = Family B
   module D = Family D
+  module f = Hom f
+  module h = Hom h
+  module g = Hom g
+  module i = Hom i
   module α = _≈_ α
   module β = _≈_ β
 
