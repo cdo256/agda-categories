@@ -17,6 +17,7 @@ open import Categories.Morphism C using (_≅_)
 open C.HomReasoning
 
 record Family (ℓI ℓI' : Level) : Set (suc (o ⊔ ℓ ⊔ e ⊔ ℓI ⊔ ℓI')) where
+  constructor fam
   field
     I : Setoid ℓI ℓI'
 
@@ -33,9 +34,11 @@ record Family (ℓI ℓI' : Level) : Set (suc (o ⊔ ℓ ⊔ e ⊔ ℓI ⊔ ℓI
     resp-sym : ∀ {i j : I₀} (p : i ≈ j) → resp.from (sym p) C.≈ resp.to p
     resp-trans : ∀ {i j k : I₀} (p : i ≈ j) (q : j ≈ k)
       → resp.from (trans p q) C.≈ resp.from q C.∘ resp.from p
+    resp-irr : ∀ {i j : I₀} (p q : i ≈ j) → resp.from p C.≈ resp.from q
 
 record Hom {ℓI ℓI'} (A : Family ℓI ℓI') (B : Family ℓI ℓI')
   : Set (o ⊔ ℓ ⊔ e ⊔ ℓI ⊔ ℓI') where
+  constructor hom
   private
     module A = Family A
     module B = Family B
@@ -52,6 +55,7 @@ record Hom {ℓI ℓI'} (A : Family ℓI ℓI') (B : Family ℓI ℓI')
 
 record _≈_ {ℓI ℓI'} {A : Family ℓI ℓI'} {B : Family ℓI ℓI'}
   (F G : Hom A B) : Set (o ⊔ ℓ ⊔ e ⊔ ℓI ⊔ ℓI') where
+  constructor hom-≈
   private
     module A = Family A
     module B = Family B
